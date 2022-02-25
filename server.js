@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+
 const fs = require('fs');
 
 let IdNum = 0;
@@ -41,7 +42,7 @@ app.post("/api/notes", (req, res) => {
 });
 
 app.delete("/api/notes/:id", (req, res) => {
-    let notes = JSON.parse(fs.readFileSync("./db/db.josn", "utf-8"))
+    let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"))
     let noteId = req.params.id.toString();
 
     notes = notes.filter((data) => {
