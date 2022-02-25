@@ -27,7 +27,7 @@ app.get("/*", (req, res) => {
 
 app.post("/api/notes", (req, res) => {
     let noteRequest = req.body;
-    let notes = JSON.parse(fs.readFileSync("./db/db.josn", "utf-8"))
+    let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"))
     IdNum = IdNum +1;
 
     const newNote = {
